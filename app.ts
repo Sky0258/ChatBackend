@@ -1,4 +1,4 @@
-const express = require('express');
+import express from "express";
 const app = express();
 
 // 导入跨域 cors 全局挂载
@@ -11,5 +11,5 @@ app.use(bodyParser.urlencoded({ extend: false}));      // false 时值为数组�
 app.use(bodyParser.json());
 
 app.listen(3007, () => {
-    console.log('http://127.0.0.1:30071212');
+    console.log('http://127.0.0.1:30071212111');
 })
