@@ -7,4 +7,4 @@ const db = mysql.createPool({
     database: 'chat-room'
 })
 
-module.exports = db;
+export default db;
