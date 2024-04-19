@@ -5,6 +5,6 @@ export interface messageRecord {
     user: {
         id: string,
         name: string,
-        imageUri: string
+        imageUrl: string
     }
 }

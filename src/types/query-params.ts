@@ -4,4 +4,5 @@ export interface postRequest {
 
 export interface postResponse {
     affectedRows: number;
+    insertId: number;
 }
