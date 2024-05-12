@@ -45,7 +45,7 @@ export function getChatRoomUserList(req: Request, res: Response) {
 // 查询聊天室的消息记录
 export function getChatRoomMessageRecord(req: Request, res: Response) {
     const chatRoomID = req.query.chatRoomID;
-    const sql = `SELECT m.id, userID, userName as name, imgUrl, content, createdAt FROM message m 
+    const sql = `SELECT m.id, userID, username as userName, imgUrl, content, createdAt FROM message m 
   LEFT JOIN user u ON m.userID = u.id
   WHERE chatRoomID = ?`;
 
@@ -66,7 +66,8 @@ export function getChatRoomMessageRecord(req: Request, res: Response) {
             };
 
             return target;
-        })
+        });
+        
         res.send({
             message: "查询聊天室用户列表成功",
             status: 1,
