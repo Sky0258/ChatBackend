@@ -43,3 +43,20 @@ export function getFriendList(req: Request, res:Response) {
         })
     })
 }
+
+// 获取用户个人信息
+export function getSelfInfo(req: Request, res:Response) {
+    const userID = req.query.userID;
+    const sql = `SELECT * FROM user WHERE id = ?`
+
+    db.query(sql, userID ,(err: Error, results: any[]) => {
+        if(err) return res.cc(err);
+        if(results.length <= 0) return res.cc('数据库查询失败');
+
+        res.send({
+            message: "查询个人信息成功",
+            status: 1,
+            results: results[0]
+        })
+    })
+}
